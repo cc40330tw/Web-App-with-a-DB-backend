@@ -1,0 +1,38 @@
+<!-- 
+
+<!doctype html>
+<html>
+    <head>
+    <title>Home page</title>
+    </head>
+    <body>
+        <h1>Home Page!</h1>
+          
+        <p>{{content}}</p>
+        <p>{{r}}</p> 
+        
+        {% for x in range(10) %}
+            {% if x % 2 == 1 %}
+                <p>{{x}}</p>
+            {% endif %}
+        {% endfor %}
+        {% for x in content %}
+            <p>{{x}}</p>
+        {% endfor %}
+
+    </body>
+</html>
+
+-->
+
+{% extends "base.html" %}
+{% block title %} Home Page {% endblock %}
+{% block content %} 
+    <h1>٩(●˙▿˙●)۶…⋆ฺ This is the Home Page ٩(●˙▿˙●)۶…⋆ฺ</h1>
+    <image src="{{url_for('static',filename='images/email.png')}}">
+{% endblock %}
+
+
+
+
+

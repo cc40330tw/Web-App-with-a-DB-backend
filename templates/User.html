@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}User{% endblock %}
+{% block content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p>{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+<p>Welcome,{{user}}</p>
+
+<form action="#" method="POST">
+    <input type="email" name="email" placeholder="Enter Email" value="{{email if email}}"/>
+    <input type="submit" value="submit"/>
+</form>
+<!--pass a variable to this template called email
+and we'll check if email has a value
+if it does we'll display that as a value for this email
+rather than displaying the placeholder on enter email
+So only the first time before the user type anything in
+which will be the placeholder
+otherwise we're gonna show the actual value of their email 
+that we grabbed from the database-->
+
+{% endblock %}
